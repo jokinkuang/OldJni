@@ -1,8 +1,8 @@
 package com.example.administrator.jnidemo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 
 import com.example.administrator.jni.FirstJni;
 
@@ -13,8 +13,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FirstJni jni = new FirstJni();
-        jni.set(11111);
-        Log.e(TAG, ""+jni.get());
+
+        ((TextView)findViewById(R.id.text)).setText(String.valueOf( new FirstJni().get() ));
     }
 }
